@@ -33,11 +33,16 @@ FILE *Abrir_Archivo(char Ruta[], char Modo[], int Salir)
 
 }
 //#############################################################################################################################################
-void Cerrar_Archivo(FILE *Archivo)
+void Cerrar_Archivo(FILE **Archivo)
 {
 
-	fclose(Archivo);
-	*Archivo = NULL;
+	if(*Archivo != NULL)
+	{
+
+		fclose(*Archivo);
+		*Archivo = NULL;
+
+	}
 
 }
 //#############################################################################################################################################

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1720913960 source:p:\facultad\organizador_multicarrera\codigo_c\archivos.c
+1721627210 source:p:\facultad\organizador_multicarrera\codigo_c\archivos.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -9,7 +9,7 @@
 1721606532 p:\facultad\organizador_multicarrera\codigo_h\otros.h
 	"../Codigo_H/trabajos_practicos.h"
 
-1720914890 p:\facultad\organizador_multicarrera\codigo_h\archivos.h
+1721627230 p:\facultad\organizador_multicarrera\codigo_h\archivos.h
 
 1721600150 source:p:\facultad\organizador_multicarrera\codigo_c\finales.c
 	<stdio.h>
@@ -25,7 +25,7 @@
 
 1720920114 p:\facultad\organizador_multicarrera\codigo_h\materias.h
 
-1721606482 source:p:\facultad\organizador_multicarrera\codigo_c\materias.c
+1721628170 source:p:\facultad\organizador_multicarrera\codigo_c\materias.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -56,7 +56,7 @@
 	"../Codigo_H/otros.h"
 	"../Codigo_H/archivos.h"
 
-1721625026 source:p:\facultad\organizador_multicarrera\main.c
+1721627340 source:p:\facultad\organizador_multicarrera\main.c
 	<stdio.h>
 	<windows.h>
 	"Codigo_H/archivos.h"

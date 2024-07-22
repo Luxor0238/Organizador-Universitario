@@ -52,7 +52,7 @@ void Pasar_Materias_CSV_a_BIN(FILE *Archivo_Materias_CSV, FILE *Archivo_Materias
 
     }
 
-    Cerrar_Archivo(Archivo_Materias_CSV);
+    Cerrar_Archivo(&Archivo_Materias_CSV);
 
 }
 //#############################################################################################################################################
@@ -248,6 +248,8 @@ void Mostrar_Estado_Carrera(FILE *Archivo_Estado_Carrera)
 	float Porcentaje_Carrera = 0;
 	int Total_De_Materias = 0;
 
+	char Buffer_Nota[3];
+
 	system("cls");
 	printf("\n\nCargando: Porfavor espere!\n\n");
 
@@ -340,7 +342,7 @@ void Mostrar_Estado_Carrera(FILE *Archivo_Estado_Carrera)
 		else
 			setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-		printf("%-4d", VAR_Estado_Carrera.Nota);
+		printf("%-4s", VAR_Estado_Carrera.Nota == 0 ? " " : (sprintf(Buffer_Nota, "%d", VAR_Estado_Carrera.Nota), Buffer_Nota));
 		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 		printf("|\n");
 
@@ -729,7 +731,7 @@ void Actualizar_Disponibilidad(FILE *Archivo_Estado_Carrera, FILE *Archivo_Mater
         if(VEC_Archivo_Materias == NULL)
         {
 
-            printf("Error reallocating memory for VEC_Archivo_Materias\n");
+            printf("Error: No se pudo realojar memoria para VEC_Archivo_Materias\n");
             exit(1);
 
         }
