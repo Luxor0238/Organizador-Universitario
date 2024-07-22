@@ -493,14 +493,10 @@ int main(void)
 						Pasar_Materias_CSV_a_BIN(Archivo_Materias_CSV, Archivo_Materias);
 						Cargar_Archivo_Progreso_Desde_Cero(Archivo_Materias, Archivo_Estado_Carrera, Archivo_Parciales);
 
-						fclose(Archivo_Materias);
-						fclose(Archivo_Estado_Carrera);
-						fclose(Archivo_Parciales);
-						fclose(Archivo_Trabajos_Practicos);
-						Archivo_Materias = NULL;
-						Archivo_Estado_Carrera = NULL;
-						Archivo_Parciales = NULL;
-						Archivo_Trabajos_Practicos = NULL;
+						Cerrar_Archivo(Archivo_Materias);
+						Cerrar_Archivo(Archivo_Estado_Carrera);
+						Cerrar_Archivo(Archivo_Parciales);
+						Cerrar_Archivo(Archivo_Trabajos_Practicos);
 
 
 						Plan_De_Estudios_Cargado = 1;
@@ -573,14 +569,10 @@ int main(void)
 							else
 							{
 
-								fclose(Archivo_Materias);
-								fclose(Archivo_Estado_Carrera);
-								fclose(Archivo_Parciales);
-								fclose(Archivo_Trabajos_Practicos);
-								Archivo_Materias = NULL;
-								Archivo_Estado_Carrera = NULL;
-								Archivo_Parciales = NULL;
-								Archivo_Trabajos_Practicos = NULL;
+								Cerrar_Archivo(Archivo_Materias);
+								Cerrar_Archivo(Archivo_Estado_Carrera);
+								Cerrar_Archivo(Archivo_Parciales);
+								Cerrar_Archivo(Archivo_Trabajos_Practicos);
 
 								Plan_De_Estudios_Cargado = 0;
 								Bandera_Plan_Cargado = 1;
@@ -612,10 +604,10 @@ int main(void)
 
 	}while(Seleccion_Menu != 8);
 
-	fclose(Archivo_Trabajos_Practicos);
-	fclose(Archivo_Estado_Carrera);
-	fclose(Archivo_Parciales);
-	fclose(Archivo_Materias);
+	Cerrar_Archivo(Archivo_Materias);
+	Cerrar_Archivo(Archivo_Estado_Carrera);
+	Cerrar_Archivo(Archivo_Parciales);
+	Cerrar_Archivo(Archivo_Trabajos_Practicos);
 
 	return 0;
 

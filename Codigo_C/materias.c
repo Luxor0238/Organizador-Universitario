@@ -52,8 +52,7 @@ void Pasar_Materias_CSV_a_BIN(FILE *Archivo_Materias_CSV, FILE *Archivo_Materias
 
     }
 
-    fclose(Archivo_Materias_CSV);
-    Archivo_Materias_CSV = NULL;
+    Cerrar_Archivo(Archivo_Materias_CSV);
 
 }
 //#############################################################################################################################################

@@ -6,7 +6,7 @@
 	"../Codigo_H/otros.h"
 	"../Codigo_H/archivos.h"
 
-1721598922 p:\facultad\organizador_multicarrera\codigo_h\otros.h
+1721606532 p:\facultad\organizador_multicarrera\codigo_h\otros.h
 	"../Codigo_H/trabajos_practicos.h"
 
 1720914890 p:\facultad\organizador_multicarrera\codigo_h\archivos.h
@@ -25,7 +25,7 @@
 
 1720920114 p:\facultad\organizador_multicarrera\codigo_h\materias.h
 
-1721601402 source:p:\facultad\organizador_multicarrera\codigo_c\materias.c
+1721606482 source:p:\facultad\organizador_multicarrera\codigo_c\materias.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -37,7 +37,7 @@
 
 1721107736 p:\facultad\organizador_multicarrera\codigo_h\parciales.h
 
-1721601408 source:p:\facultad\organizador_multicarrera\codigo_c\otros.c
+1721606538 source:p:\facultad\organizador_multicarrera\codigo_c\otros.c
 	<stdio.h>
 	<windows.h>
 	<ctype.h>
@@ -47,7 +47,7 @@
 	"../Codigo_H/trabajos_practicos.h"
 	"../Codigo_H/archivos.h"
 
-1721600272 source:p:\facultad\organizador_multicarrera\codigo_c\parciales.c
+1721606514 source:p:\facultad\organizador_multicarrera\codigo_c\parciales.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -56,7 +56,7 @@
 	"../Codigo_H/otros.h"
 	"../Codigo_H/archivos.h"
 
-1721606064 source:p:\facultad\organizador_multicarrera\main.c
+1721625026 source:p:\facultad\organizador_multicarrera\main.c
 	<stdio.h>
 	<windows.h>
 	"Codigo_H/archivos.h"
@@ -66,7 +66,7 @@
 	"Codigo_H/parciales.h"
 	"Codigo_H/trabajos_practicos.h"
 
-1721600406 source:p:\facultad\organizador_multicarrera\codigo_c\trabajos_practicos.c
+1721606526 source:p:\facultad\organizador_multicarrera\codigo_c\trabajos_practicos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
