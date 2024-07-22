@@ -1,0 +1,81 @@
+# depslib dependency file v1.0
+1720913960 source:p:\facultad\organizador_multicarrera\codigo_c\archivos.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"../Codigo_H/otros.h"
+	"../Codigo_H/archivos.h"
+
+1721598922 p:\facultad\organizador_multicarrera\codigo_h\otros.h
+	"../Codigo_H/trabajos_practicos.h"
+
+1720914890 p:\facultad\organizador_multicarrera\codigo_h\archivos.h
+
+1721600150 source:p:\facultad\organizador_multicarrera\codigo_c\finales.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	"../Codigo_H/finales.h"
+	"../Codigo_H/archivos.h"
+	"../Codigo_H/materias.h"
+	"../Codigo_H/otros.h"
+
+1720914890 p:\facultad\organizador_multicarrera\codigo_h\finales.h
+
+1720920114 p:\facultad\organizador_multicarrera\codigo_h\materias.h
+
+1721601402 source:p:\facultad\organizador_multicarrera\codigo_c\materias.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	"../Codigo_H/materias.h"
+	"../Codigo_H/archivos.h"
+	"../Codigo_H/parciales.h"
+	"../Codigo_H/otros.h"
+
+1721107736 p:\facultad\organizador_multicarrera\codigo_h\parciales.h
+
+1721601408 source:p:\facultad\organizador_multicarrera\codigo_c\otros.c
+	<stdio.h>
+	<windows.h>
+	<ctype.h>
+	<time.h>
+	<stdlib.h>
+	"../Codigo_H/otros.h"
+	"../Codigo_H/trabajos_practicos.h"
+	"../Codigo_H/archivos.h"
+
+1721600272 source:p:\facultad\organizador_multicarrera\codigo_c\parciales.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"../Codigo_H/materias.h"
+	"../Codigo_H/parciales.h"
+	"../Codigo_H/otros.h"
+	"../Codigo_H/archivos.h"
+
+1721606064 source:p:\facultad\organizador_multicarrera\main.c
+	<stdio.h>
+	<windows.h>
+	"Codigo_H/archivos.h"
+	"Codigo_H/materias.h"
+	"Codigo_H/otros.h"
+	"Codigo_H/finales.h"
+	"Codigo_H/parciales.h"
+	"Codigo_H/trabajos_practicos.h"
+
+1721600406 source:p:\facultad\organizador_multicarrera\codigo_c\trabajos_practicos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<windows.h>
+	"../Codigo_H/trabajos_practicos.h"
+	"../Codigo_H/archivos.h"
+	"../Codigo_H/otros.h"
+	"../Codigo_H/materias.h"
+
+1721107720 p:\facultad\organizador_multicarrera\codigo_h\trabajos_practicos.h
+
