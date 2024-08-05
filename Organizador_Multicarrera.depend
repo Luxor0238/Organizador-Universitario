@@ -37,7 +37,7 @@
 
 1721107736 p:\facultad\organizador_multicarrera\codigo_h\parciales.h
 
-1721606538 source:p:\facultad\organizador_multicarrera\codigo_c\otros.c
+1721628496 source:p:\facultad\organizador_multicarrera\codigo_c\otros.c
 	<stdio.h>
 	<windows.h>
 	<ctype.h>
@@ -78,4 +78,84 @@
 	"../Codigo_H/materias.h"
 
 1721107720 p:\facultad\organizador_multicarrera\codigo_h\trabajos_practicos.h
+
+1721627210 source:e:\facultad\organizador_multicarrera\codigo_c\archivos.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"../Codigo_H/otros.h"
+	"../Codigo_H/archivos.h"
+
+1721606532 e:\facultad\organizador_multicarrera\codigo_h\otros.h
+	"../Codigo_H/trabajos_practicos.h"
+
+1721107720 e:\facultad\organizador_multicarrera\codigo_h\trabajos_practicos.h
+
+1721627230 e:\facultad\organizador_multicarrera\codigo_h\archivos.h
+
+1721600150 source:e:\facultad\organizador_multicarrera\codigo_c\finales.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	"../Codigo_H/finales.h"
+	"../Codigo_H/archivos.h"
+	"../Codigo_H/materias.h"
+	"../Codigo_H/otros.h"
+
+1720914890 e:\facultad\organizador_multicarrera\codigo_h\finales.h
+
+1720920114 e:\facultad\organizador_multicarrera\codigo_h\materias.h
+
+1722864535 source:e:\facultad\organizador_multicarrera\codigo_c\materias.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	"../Codigo_H/materias.h"
+	"../Codigo_H/archivos.h"
+	"../Codigo_H/parciales.h"
+	"../Codigo_H/otros.h"
+
+1721107736 e:\facultad\organizador_multicarrera\codigo_h\parciales.h
+
+1721628496 source:e:\facultad\organizador_multicarrera\codigo_c\otros.c
+	<stdio.h>
+	<windows.h>
+	<ctype.h>
+	<time.h>
+	<stdlib.h>
+	"../Codigo_H/otros.h"
+	"../Codigo_H/trabajos_practicos.h"
+	"../Codigo_H/archivos.h"
+
+1721606514 source:e:\facultad\organizador_multicarrera\codigo_c\parciales.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"../Codigo_H/materias.h"
+	"../Codigo_H/parciales.h"
+	"../Codigo_H/otros.h"
+	"../Codigo_H/archivos.h"
+
+1721606526 source:e:\facultad\organizador_multicarrera\codigo_c\trabajos_practicos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<windows.h>
+	"../Codigo_H/trabajos_practicos.h"
+	"../Codigo_H/archivos.h"
+	"../Codigo_H/otros.h"
+	"../Codigo_H/materias.h"
+
+1722864001 source:e:\facultad\organizador_multicarrera\main.c
+	<stdio.h>
+	<windows.h>
+	"Codigo_H/archivos.h"
+	"Codigo_H/materias.h"
+	"Codigo_H/otros.h"
+	"Codigo_H/finales.h"
+	"Codigo_H/parciales.h"
+	"Codigo_H/trabajos_practicos.h"
 

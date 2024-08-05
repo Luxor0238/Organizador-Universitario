@@ -737,9 +737,9 @@ void Actualizar_Disponibilidad(FILE *Archivo_Estado_Carrera, FILE *Archivo_Mater
         }
 
         VEC_Archivo_Materias[Cantidad_Materias_Materias - 1] = VAR_Materias;
-
-    }
-
+        Error_Lectura_Escritura(fread(&VAR_Materias, sizeof(STR_Materias), 1, Archivo_Materias), "Actualizar_Disponibilidad");
+    
+	}
     // Leer estado de carrera y almacenarlas en un vector dinámico
     rewind(Archivo_Estado_Carrera);
     Error_Lectura_Escritura(fread(&VAR_Estado_Carrera, sizeof(STR_Estado_Carrera), 1, Archivo_Estado_Carrera), "Actualizar_Disponibilidad");
@@ -758,6 +758,8 @@ void Actualizar_Disponibilidad(FILE *Archivo_Estado_Carrera, FILE *Archivo_Mater
         }
 
         VEC_Estado_Carrera[Cantidad_Materias_Estado - 1] = VAR_Estado_Carrera;
+        Error_Lectura_Escritura(fread(&VAR_Estado_Carrera, sizeof(STR_Estado_Carrera), 1, Archivo_Estado_Carrera), "Actualizar_Disponibilidad");
+    
     
     }
 

@@ -22,7 +22,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado)
 
 
 	system("cls");
-	printf("Organizador Multicarrera v0.6.6\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha.tm_mday, STR_Fecha.tm_mon + 1, STR_Fecha.tm_year + 1900, STR_Fecha.tm_hour, STR_Fecha.tm_min);
+	printf("Organizador Multicarrera v0.6.9\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha.tm_mday, STR_Fecha.tm_mon + 1, STR_Fecha.tm_year + 1900, STR_Fecha.tm_hour, STR_Fecha.tm_min);
 
 	if(!Plan_De_Estudios_Cargado)
 	{
