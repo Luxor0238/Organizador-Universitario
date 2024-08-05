@@ -137,6 +137,8 @@ void Mostrar_Trabajos(FILE *Archivo_Trabajos_Practicos)
 
 	STR_Trabajos VAR_Trabajos;
 
+	int Cantidad_Trabajos = 0;
+
 	char buffer_TP[3];
 	
 	system("cls");
@@ -159,7 +161,21 @@ void Mostrar_Trabajos(FILE *Archivo_Trabajos_Practicos)
 
 		}
 
+		if(strcpy(VAR_Trabajos.Borrado, "SI") == 0)
+			Cantidad_Trabajos ++;
+
 		Error_Lectura_Escritura(fread(&VAR_Trabajos, sizeof(STR_Trabajos), 1, Archivo_Trabajos_Practicos), "Mostrar_Trabajos");
+
+	}
+
+	if(!Cantidad_Trabajos)
+	{
+
+		setColor(FOREGROUND_RED | FOREGROUND_GREEN);
+		printf("----------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+		printf("|                                                %-104s|\n", "No tienes ningun trabajo practico cargado!!");
+		printf("----------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 
 	}
 
