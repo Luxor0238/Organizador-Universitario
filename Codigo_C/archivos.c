@@ -33,7 +33,7 @@ FILE *Abrir_Archivo(char Ruta[], char Modo[], int Salir)
 
 }
 //#############################################################################################################################################
-void Cerrar_Archivo(FILE **Archivo)
+void Cerrar_Archivo(FILE **Archivo, char Nombre_Archivo[])
 {
 
 	if(*Archivo != NULL)
@@ -41,6 +41,13 @@ void Cerrar_Archivo(FILE **Archivo)
 
 		fclose(*Archivo);
 		*Archivo = NULL;
+
+	}
+	else
+	{
+
+		printf("Se ha producido un error al intentar cerrar el archivo: %s", Nombre_Archivo);
+		system("pause");
 
 	}
 

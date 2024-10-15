@@ -52,7 +52,7 @@ void Pasar_Materias_CSV_a_BIN(FILE *Archivo_Materias_CSV, FILE *Archivo_Materias
 
     }
 
-    Cerrar_Archivo(&Archivo_Materias_CSV);
+    Cerrar_Archivo(&Archivo_Materias_CSV, "Plan.csv");
 
 }
 //#############################################################################################################################################
