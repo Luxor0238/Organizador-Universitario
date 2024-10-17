@@ -2,19 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Codigo_C\finales.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Codigo_C\archivos.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1898" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Codigo_C\materias.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="27944" topLine="720" />
-		</Cursor>
-	</File>
-	<File name="Codigo_C\archivos.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2025" topLine="0" />
+			<Cursor1 position="819" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Codigo_C\parciales.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,9 +12,24 @@
 			<Cursor1 position="8150" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Codigo_C\otros.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Codigo_H\otros.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1568" topLine="144" />
+			<Cursor1 position="1661" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Codigo_C\finales.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1898" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Codigo_C\materias.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4987" topLine="79" />
+		</Cursor>
+	</File>
+	<File name="Codigo_C\otros.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1658" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="Codigo_H\trabajos_practicos.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -40,11 +45,6 @@
 	<File name="Codigo_C\trabajos_practicos.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="5281" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Codigo_H\otros.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1661" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

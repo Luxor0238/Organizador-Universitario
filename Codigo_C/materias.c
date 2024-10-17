@@ -56,7 +56,7 @@ void Pasar_Materias_CSV_a_BIN(FILE *Archivo_Materias_CSV, FILE *Archivo_Materias
 
 }
 //#############################################################################################################################################
-void Cambiar_Estado_Materias(FILE *Archivo_Estado_Carrera, FILE *Archivo_Materias, int Notificaciones, int Plan_De_Estudios_Cargado)
+void Cambiar_Estado_Materias(FILE *Archivo_Estado_Carrera, FILE *Archivo_Materias, int Notificaciones, int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_Practicos)
 {
 
 	int Codigo_De_Materia_Ingresado;
@@ -76,7 +76,11 @@ void Cambiar_Estado_Materias(FILE *Archivo_Estado_Carrera, FILE *Archivo_Materia
 		if(Codigo_De_Materia_Ingresado == 0)
 			break;
 
-		Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado);
+		if(Plan_De_Estudios_Cargado)
+			Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, Archivo_Trabajos_Practicos);
+		else
+			Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, NULL);
+
 		setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
 		printf("\n\n\nLa materia ingresada no existe! Intente denuevo (0 para cancelar)\n-----------------------------------------------------------------\n--> ");
 		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
@@ -91,7 +95,11 @@ void Cambiar_Estado_Materias(FILE *Archivo_Estado_Carrera, FILE *Archivo_Materia
 	while(Materia_Disponible == -1 && Codigo_De_Materia_Ingresado != 0)
 	{
 
-		Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado);
+		if(Plan_De_Estudios_Cargado)
+			Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, Archivo_Trabajos_Practicos);
+		else
+			Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, NULL);
+		
 		setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
 		printf("\n\n\nLa materia ingresada esta no disponible! Intente con otra (0 para cancelar)\n---------------------------------------------------------------------------\n--> ");
 		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
@@ -429,13 +437,13 @@ void Mostrar_Estado_Carrera(FILE *Archivo_Estado_Carrera)
 	Porcentaje_Carrera = ((Materias_Aprobadas + Materias_Promocionadas + Materias_Cursadas) * 100) / Total_De_Materias;
 
 	setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-	printf("-----------------------------------------\n");
+	printf("------------- ----------------------------\n");
     printf("%-33s|  %-4d", "Materias Por Cursar", Materias_Por_Cursar);
-    printf("%-2s\n", "|");
-    printf("-----------------------------------------\n");
+    printf("%-2s\n", " |");
+    printf("------------- ----------------------------\n");
     printf("%-33s|  %-4d", "Total de materias", Total_De_Materias);
-    printf("%-2s\n", "|");
-	printf("-----------------------------------------\n");
+    printf("%-2s\n", " |");
+	printf("------------- ----------------------------\n");
     printf("%-33s| %.2f%-2c", "Porcentaje de carrera hecho", Porcentaje_Carrera, '%');
     printf("%s", "|");
 	printf("\n-----------------------------------------\n");

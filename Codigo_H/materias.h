@@ -41,7 +41,7 @@ void Actualizar_Disponibilidad(FILE *, FILE *); //Actualiza la disponibilidad de
 void Modificar_Condicion(FILE *, int); //Modifica la Condicion de la materia seleccionada
 void Modificar_Recursadas(FILE *, int); //Modifica la Cantidad de Recursadas de la materia seleccionada
 void Modificar_Nota(FILE *, int); //Modifica la Nota de la materia seleccionada
-void Cambiar_Estado_Materias(FILE *, FILE *, int, int); //Cambia el estado actual de una materia
+void Cambiar_Estado_Materias(FILE *, FILE *, int, int, FILE *); //Cambia el estado actual de una materia
 //#############################################################################################################################################
 int Buscar_Materia_Estado_Carrera(FILE *, int); //Busca una materia por codigo y devuelve la posicion en bytes del registro
 int Buscar_Materia(FILE *, int); //Busca una materia por codigo y devuelve la posicion en bytes del registro

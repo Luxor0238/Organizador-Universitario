@@ -91,12 +91,21 @@ int main(void)
 
 		}
 
-		Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado);
+
+		if(Plan_De_Estudios_Cargado)
+			Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, Archivo_Trabajos_Practicos);
+		else
+			Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, NULL);
+
+
 		Seleccion_Menu = Ingresa_Menu_Valido(1, 9);
 		while(Seleccion_Menu == -1)
 		{
 
-			Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado);
+			if(Plan_De_Estudios_Cargado)
+				Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, Archivo_Trabajos_Practicos);
+			else
+				Mostrar_Menu_Gestion(Plan_De_Estudios_Cargado, NULL);
 
 			setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
 			printf("Error: Opcion Invalida! Intente denuevo:");
@@ -114,7 +123,7 @@ int main(void)
 				if(Plan_De_Estudios_Cargado)
 				{
 
-					Cambiar_Estado_Materias(Archivo_Estado_Carrera, Archivo_Materias, 32, Plan_De_Estudios_Cargado);
+					Cambiar_Estado_Materias(Archivo_Estado_Carrera, Archivo_Materias, 32, Plan_De_Estudios_Cargado, Archivo_Trabajos_Practicos);
 					Actualizar_Disponibilidad(Archivo_Estado_Carrera, Archivo_Materias);
 
 				}

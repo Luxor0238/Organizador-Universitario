@@ -13,29 +13,71 @@
 //#############################################################################################################################################
 //#############################################################################################################################################
 //Funciones####################################################################################################################################
-void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado)
+void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_Practicos)
 {
 
 	time_t Fecha_Actual = time(NULL);
-	struct tm STR_Fecha = *localtime(&Fecha_Actual);
+	struct tm STR_Fecha_F = *localtime(&Fecha_Actual);
 
+	STR_Trabajos VAR_Trabajos;
 
+	int Dias_Para_Entregar;
+	int Codigo_De_Trabajo;
 
 	system("cls");
-	printf("Organizador Multicarrera v0.7.10\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha.tm_mday, STR_Fecha.tm_mon + 1, STR_Fecha.tm_year + 1900, STR_Fecha.tm_hour, STR_Fecha.tm_min);
+	printf("Organizador Multicarrera v0.7.11\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha_F.tm_mday, STR_Fecha_F.tm_mon + 1, STR_Fecha_F.tm_year + 1900, STR_Fecha_F.tm_hour, STR_Fecha_F.tm_min);
 
 	if(!Plan_De_Estudios_Cargado)
 	{
-		
+
 		setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
 		printf("No hay ningun plan de estudios cargado!!\n\n");
 		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 
 	}
 
+	if(Plan_De_Estudios_Cargado)
+	{
+
+		printf("--------------------------Notificaciones--------------------------\n\n");
+
+		Error_Lectura_Escritura(fread(&VAR_Trabajos, sizeof(STR_Trabajos), 1, Archivo_Trabajos_Practicos), "Mostrar_Menu_Gestion");
+		while(!feof(Archivo_Trabajos_Practicos))
+		{
+
+			if(strcmp(VAR_Trabajos.Borrado, "No") == 0)
+			{
+
+				Codigo_De_Trabajo = VAR_Trabajos.Codigo_De_Trabajo;
+
+				struct tm STR_F_Entrega = {0, 0, 0, VAR_Trabajos.Fecha_De_Entrega.Dia, VAR_Trabajos.Fecha_De_Entrega.Mes - 1, VAR_Trabajos.Fecha_De_Entrega.Anio - 1900};
+				time_t Fecha_Entrega = mktime(&STR_F_Entrega);
+				time_t Fecha_Actual = mktime(&STR_Fecha_F);
+				Dias_Para_Entregar = difftime(Fecha_Entrega, Fecha_Actual) / (60 * 60 * 24);
+
+				if(Dias_Para_Entregar > 0)
+					printf("Tienes %d dia/s para entregar el trabajo practico ID: %d\n", Dias_Para_Entregar, Codigo_De_Trabajo);
+
+				else if(Dias_Para_Entregar == 0)
+					printf("Hoy es la entrega del trabajo practico ID: %d\n", Codigo_De_Trabajo);
+
+				else
+					printf("El trabajo practico ID: %d vencio hace %d dia/s\n", Codigo_De_Trabajo, -Dias_Para_Entregar);
+
+			}
+
+			Error_Lectura_Escritura(fread(&VAR_Trabajos, sizeof(STR_Trabajos), 1, Archivo_Trabajos_Practicos), "Mostrar_Menu_Gestion");
+
+		}
+
+		printf("\n------------------------------------------------------------------\n\n");
+
+	}
+
 	printf("Opciones Disponibles:\n");
 	printf("---------------------\n");
 	printf("1) Cambiar el estado de una materia\n2) Ver todas las materias del plan\n3) Ver el estado actual de la carrera\n4) Gestionar Trabajos Practicos\n5) Gestionar Parciales\n6) Consultar Finales Pendientes\n7) Configuracion de Plan de Estudios\n8) Salir del Programa\n");
+
 	printf("\n--> ");
 
 }

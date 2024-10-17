@@ -55,51 +55,55 @@ void Consultar_Y_Modificar_Parciales(FILE *Archivo_Parciales, FILE *Archivo_Esta
 			while(!feof(Archivo_Parciales))
 			{
 
-				printf("  %-6d| %-48s|       ", VAR_Parciales.Codigo_De_Materia, VAR_Parciales.Nombre_De_Materia);
+				if(VAR_Parciales.Nota_Parcial_1 != 0 || VAR_Parciales.Nota_Parcial_2 != 0 || VAR_Parciales.Nota_Recuperatorio != 0){
 
-				if(VAR_Parciales.Nota_Parcial_1 >= 0 && VAR_Parciales.Nota_Parcial_1 <=3)
-					setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+					printf("  %-6d| %-48s|       ", VAR_Parciales.Codigo_De_Materia, VAR_Parciales.Nombre_De_Materia);
 
-				else if(VAR_Parciales.Nota_Parcial_1 >= 4 && VAR_Parciales.Nota_Parcial_1 <=6)
-					setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					if(VAR_Parciales.Nota_Parcial_1 >= 0 && VAR_Parciales.Nota_Parcial_1 <=3)
+						setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
 
-				else
-					setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					else if(VAR_Parciales.Nota_Parcial_1 >= 4 && VAR_Parciales.Nota_Parcial_1 <=6)
+						setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-				printf("%-9s", VAR_Parciales.Nota_Parcial_1 == 0 ? " " : (sprintf(BFR_Nota_1, "%d", VAR_Parciales.Nota_Parcial_1), BFR_Nota_1));
-				setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+					else
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-				printf("|       ");
+					printf("%-9s", VAR_Parciales.Nota_Parcial_1 == 0 ? " " : (sprintf(BFR_Nota_1, "%d", VAR_Parciales.Nota_Parcial_1), BFR_Nota_1));
+					setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 
-				if(VAR_Parciales.Nota_Parcial_2 >= 0 && VAR_Parciales.Nota_Parcial_2 <=3)
-					setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+					printf("|       ");
 
-				else if(VAR_Parciales.Nota_Parcial_2 >= 4 && VAR_Parciales.Nota_Parcial_2 <=6)
-					setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					if(VAR_Parciales.Nota_Parcial_2 >= 0 && VAR_Parciales.Nota_Parcial_2 <=3)
+						setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
 
-				else
-					setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					else if(VAR_Parciales.Nota_Parcial_2 >= 4 && VAR_Parciales.Nota_Parcial_2 <=6)
+						setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-				printf("%-9s", VAR_Parciales.Nota_Parcial_2 == 0 ? " " : (sprintf(BFR_Nota_2, "%d", VAR_Parciales.Nota_Parcial_2), BFR_Nota_2));
-				setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+					else
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-				printf("|         ");
+					printf("%-9s", VAR_Parciales.Nota_Parcial_2 == 0 ? " " : (sprintf(BFR_Nota_2, "%d", VAR_Parciales.Nota_Parcial_2), BFR_Nota_2));
+					setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 
-				if(VAR_Parciales.Nota_Recuperatorio >= 0 && VAR_Parciales.Nota_Recuperatorio <=3)
-					setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+					printf("|         ");
 
-				else if(VAR_Parciales.Nota_Recuperatorio >= 4 && VAR_Parciales.Nota_Recuperatorio <=6)
-					setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					if(VAR_Parciales.Nota_Recuperatorio >= 0 && VAR_Parciales.Nota_Recuperatorio <=3)
+						setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
 
-				else
-					setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					else if(VAR_Parciales.Nota_Recuperatorio >= 4 && VAR_Parciales.Nota_Recuperatorio <=6)
+						setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-				printf("%-11s", VAR_Parciales.Nota_Recuperatorio == 0 ? " " : (sprintf(BFR_Nota_R, "%d", VAR_Parciales.Nota_Recuperatorio), BFR_Nota_R));
-				setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+					else
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-				printf("|\n");
-				printf("------------------------------------------------------------------------------------------------------------------\n");
+					printf("%-11s", VAR_Parciales.Nota_Recuperatorio == 0 ? " " : (sprintf(BFR_Nota_R, "%d", VAR_Parciales.Nota_Recuperatorio), BFR_Nota_R));
+					setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+
+					printf("|\n");
+					printf("------------------------------------------------------------------------------------------------------------------\n");
 			
+				}
+
 				Error_Lectura_Escritura(fread(&VAR_Parciales, sizeof(STR_Parciales), 1, Archivo_Parciales), "Consultar_Y_Modificar_Parciales");
 
 			}

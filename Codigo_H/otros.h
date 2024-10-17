@@ -23,7 +23,7 @@ int Es_Bisiesto(int);
 //#############################################################################################################################################
 void Mostrar_Menu_Pricipal(void);
 void Mostrar_Menu_Condicion(void);
-void Mostrar_Menu_Gestion(int);
+void Mostrar_Menu_Gestion(int, FILE *);
 void Mostrar_Menu_Plan_De_Estudios(void);
 void Mostrar_Menu_Finales(void);
 void Mostrar_Menu_Parciales(void);
