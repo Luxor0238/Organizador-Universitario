@@ -159,16 +159,15 @@ void Mostrar_Trabajos(FILE *Archivo_Trabajos_Practicos)
 	    	printf("        %-11d|        %-11d| %-26s| %-26s|   %-5s|    %-7s|    %-6s|  %-4s| %-2d/%-2d/%-2d %-2d:%-3d|\n", VAR_Trabajos.Codigo_De_Trabajo, VAR_Trabajos.Codigo_De_Materia, VAR_Trabajos.Nombre_De_Materia, VAR_Trabajos.Nombre_De_Trabajo, VAR_Trabajos.Es_Grupal, VAR_Trabajos.Entregado, VAR_Trabajos.Aprobado, VAR_Trabajos.Nota == 0 ? "--" : (sprintf(buffer_TP, "%d", VAR_Trabajos.Nota), buffer_TP), VAR_Trabajos.Fecha_De_Entrega.Dia, VAR_Trabajos.Fecha_De_Entrega.Mes, VAR_Trabajos.Fecha_De_Entrega.Anio, VAR_Trabajos.Fecha_De_Entrega.Hora, VAR_Trabajos.Fecha_De_Entrega.Minutos);
 	    	printf("----------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 
-		}
+	    	Cantidad_Trabajos ++;
 
-		if(strcpy(VAR_Trabajos.Borrado, "SI") == 0)
-			Cantidad_Trabajos ++;
+		}
 
 		Error_Lectura_Escritura(fread(&VAR_Trabajos, sizeof(STR_Trabajos), 1, Archivo_Trabajos_Practicos), "Mostrar_Trabajos");
 
 	}
 
-	if(!Cantidad_Trabajos)
+	if(Cantidad_Trabajos == 0)
 	{
 
 		setColor(FOREGROUND_RED | FOREGROUND_GREEN);

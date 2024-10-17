@@ -24,8 +24,10 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 	int Dias_Para_Entregar;
 	int Codigo_De_Trabajo;
 
+	int Registros = 0;
+
 	system("cls");
-	printf("Organizador Multicarrera v0.8.1\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha_F.tm_mday, STR_Fecha_F.tm_mon + 1, STR_Fecha_F.tm_year + 1900, STR_Fecha_F.tm_hour, STR_Fecha_F.tm_min);
+	printf("Organizador Multicarrera v0.8.2\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha_F.tm_mday, STR_Fecha_F.tm_mon + 1, STR_Fecha_F.tm_year + 1900, STR_Fecha_F.tm_hour, STR_Fecha_F.tm_min);
 
 	if(!Plan_De_Estudios_Cargado)
 	{
@@ -54,7 +56,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 				time_t Fecha_Entrega = mktime(&STR_F_Entrega);
 				time_t Fecha_Actual = mktime(&STR_Fecha_F);
 				Dias_Para_Entregar = difftime(Fecha_Entrega, Fecha_Actual) / (60 * 60 * 24);
-				//setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+				
 				if(Dias_Para_Entregar > 0)
 				{
 
@@ -62,7 +64,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 					{
 
 						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-						printf("Tienes %d dia/s para entregar el trabajo practico ID: %d\n", Dias_Para_Entregar, Codigo_De_Trabajo);
+						printf("     Tienes %d dia/s para entregar el trabajo practico ID: %d\n", Dias_Para_Entregar, Codigo_De_Trabajo);
 						setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
 
 					}
@@ -70,7 +72,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 					{
 
 						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-						printf("Tienes ");
+						printf("     Tienes ");
 						setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
 						printf("%d", Dias_Para_Entregar);
 						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
@@ -82,7 +84,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 					{
 
 						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-						printf("Tienes ");
+						printf("     Tienes ");
 						setColor(FOREGROUND_RED);
 						printf("%d", Dias_Para_Entregar);
 						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
@@ -96,7 +98,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 				else if(Dias_Para_Entregar == 0)
 				{
 					setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
-					printf("Hoy es la entrega del trabajo practico ID: %d\n", Codigo_De_Trabajo);
+					printf("          Hoy es la entrega del trabajo practico ID: %d\n", Codigo_De_Trabajo);
 					setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
 
 				}
@@ -104,16 +106,22 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 				else
 				{
 					setColor(FOREGROUND_RED);
-					printf("El trabajo practico ID: %d vencio hace %d dia/s\n", Codigo_De_Trabajo, -Dias_Para_Entregar);
+					printf("        El trabajo practico ID: %d vencio hace %d dia/s\n", Codigo_De_Trabajo, -Dias_Para_Entregar);
 					setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
 
 				}
 
+
 			}
+
+			Registros ++;
 
 			Error_Lectura_Escritura(fread(&VAR_Trabajos, sizeof(STR_Trabajos), 1, Archivo_Trabajos_Practicos), "Mostrar_Menu_Gestion");
 
 		}
+
+		if(Registros == 0)
+			printf("                     Nada que ver por aqui!!\n");
 
 		printf("\n------------------------------------------------------------------\n\n");
 
