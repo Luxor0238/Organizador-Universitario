@@ -25,7 +25,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 	int Codigo_De_Trabajo;
 
 	system("cls");
-	printf("Organizador Multicarrera v0.7.11\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha_F.tm_mday, STR_Fecha_F.tm_mon + 1, STR_Fecha_F.tm_year + 1900, STR_Fecha_F.tm_hour, STR_Fecha_F.tm_min);
+	printf("Organizador Multicarrera v0.8.1\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha_F.tm_mday, STR_Fecha_F.tm_mon + 1, STR_Fecha_F.tm_year + 1900, STR_Fecha_F.tm_hour, STR_Fecha_F.tm_min);
 
 	if(!Plan_De_Estudios_Cargado)
 	{
@@ -54,15 +54,60 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 				time_t Fecha_Entrega = mktime(&STR_F_Entrega);
 				time_t Fecha_Actual = mktime(&STR_Fecha_F);
 				Dias_Para_Entregar = difftime(Fecha_Entrega, Fecha_Actual) / (60 * 60 * 24);
-
+				//setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 				if(Dias_Para_Entregar > 0)
-					printf("Tienes %d dia/s para entregar el trabajo practico ID: %d\n", Dias_Para_Entregar, Codigo_De_Trabajo);
+				{
+
+					if(Dias_Para_Entregar > 20)
+					{
+
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+						printf("Tienes %d dia/s para entregar el trabajo practico ID: %d\n", Dias_Para_Entregar, Codigo_De_Trabajo);
+						setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
+
+					}
+					else if(Dias_Para_Entregar >=10 && Dias_Para_Entregar <=20)
+					{
+
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+						printf("Tienes ");
+						setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
+						printf("%d", Dias_Para_Entregar);
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+						printf(" dia/s para entregar el trabajo practico ID: %d\n", Codigo_De_Trabajo);
+						setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
+
+					}
+					else
+					{
+
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+						printf("Tienes ");
+						setColor(FOREGROUND_RED);
+						printf("%d", Dias_Para_Entregar);
+						setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+						printf(" dia/s para entregar el trabajo practico ID: %d\n", Codigo_De_Trabajo);
+						setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
+
+					}
+
+				}
 
 				else if(Dias_Para_Entregar == 0)
+				{
+					setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
 					printf("Hoy es la entrega del trabajo practico ID: %d\n", Codigo_De_Trabajo);
+					setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
+
+				}
 
 				else
+				{
+					setColor(FOREGROUND_RED);
 					printf("El trabajo practico ID: %d vencio hace %d dia/s\n", Codigo_De_Trabajo, -Dias_Para_Entregar);
+					setColor(FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
+
+				}
 
 			}
 
