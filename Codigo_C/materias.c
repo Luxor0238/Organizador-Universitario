@@ -273,86 +273,91 @@ void Mostrar_Estado_Carrera(FILE *Archivo_Estado_Carrera)
 	while(!feof(Archivo_Estado_Carrera))
 	{
 
-		if(strcmp(VAR_Estado_Carrera.Condicion, "Promocionada") == 0)
-			Materias_Promocionadas ++;
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursada") == 0)
-			Materias_Cursadas ++;
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "No Aprobada") == 0)
-			Materias_Reprobadas ++;
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursando") == 0)
-			Materias_En_Curso ++;
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Por Cursar") == 0)
-			Materias_Por_Cursar ++;
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Aprobada") == 0)
-			Materias_Aprobadas ++;
-
-		printf("----------------------------------------------------------------------------------------------------------------------------------\n");
-		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-		printf("  %-6d| %-48s| ", VAR_Estado_Carrera.Codigo_De_Materia, VAR_Estado_Carrera.Nombre_De_Materia);
-
-		if(strcmp(VAR_Estado_Carrera.Condicion, "No Aprobada") == 0)
-			setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursada") == 0)
-			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Promocionada") == 0)
-			setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursando") == 0)
-			setColor(FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-
-		else if(strcmp(VAR_Estado_Carrera.Condicion, "Aprobada") == 0)
-			setColor(FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-
-		else
-			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-
-		printf("%-15s", VAR_Estado_Carrera.Condicion);
-
-		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-		printf("|           ");
-
-		if(VAR_Estado_Carrera.Cantidad_De_Recursadas != 0)
-			setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
-
-		else
-			setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-
-		printf("%-13d", VAR_Estado_Carrera.Cantidad_De_Recursadas);
-
-		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-		printf("| ");
-
-
 		if(strcmp(VAR_Estado_Carrera.Disponibilidad, "Disponible") == 0)
-			setColor(FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+		{
 
-		else
-			setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+			if(strcmp(VAR_Estado_Carrera.Condicion, "Promocionada") == 0)
+				Materias_Promocionadas ++;
 
-		printf("   %-17s", VAR_Estado_Carrera.Disponibilidad);
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursada") == 0)
+				Materias_Cursadas ++;
 
-		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-		printf("|  ");
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "No Aprobada") == 0)
+				Materias_Reprobadas ++;
 
-		if(VAR_Estado_Carrera.Nota >= 0 && VAR_Estado_Carrera.Nota <=3)
-			setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursando") == 0)
+				Materias_En_Curso ++;
 
-		else if(VAR_Estado_Carrera.Nota >= 4 && VAR_Estado_Carrera.Nota <=6)
-			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Por Cursar") == 0)
+				Materias_Por_Cursar ++;
 
-		else
-			setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Aprobada") == 0)
+				Materias_Aprobadas ++;
 
-		printf("%-4s", VAR_Estado_Carrera.Nota == 0 ? " " : (sprintf(Buffer_Nota, "%d", VAR_Estado_Carrera.Nota), Buffer_Nota));
-		setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-		printf("|\n");
+			printf("----------------------------------------------------------------------------------------------------------------------------------\n");
+			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+			printf("  %-6d| %-48s| ", VAR_Estado_Carrera.Codigo_De_Materia, VAR_Estado_Carrera.Nombre_De_Materia);
+
+			if(strcmp(VAR_Estado_Carrera.Condicion, "No Aprobada") == 0)
+				setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursada") == 0)
+				setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Promocionada") == 0)
+				setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursando") == 0)
+				setColor(FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+
+			else if(strcmp(VAR_Estado_Carrera.Condicion, "Aprobada") == 0)
+				setColor(FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+			else
+				setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+
+			printf("%-15s", VAR_Estado_Carrera.Condicion);
+
+			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+			printf("|           ");
+
+			if(VAR_Estado_Carrera.Cantidad_De_Recursadas != 0)
+				setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+
+			else
+				setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+			printf("%-13d", VAR_Estado_Carrera.Cantidad_De_Recursadas);
+
+			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+			printf("| ");
+
+
+			if(strcmp(VAR_Estado_Carrera.Disponibilidad, "Disponible") == 0)
+				setColor(FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+
+			else
+				setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+
+			printf("   %-17s", VAR_Estado_Carrera.Disponibilidad);
+
+			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+			printf("|  ");
+
+			if(VAR_Estado_Carrera.Nota >= 0 && VAR_Estado_Carrera.Nota <=3)
+				setColor(FOREGROUND_RED | FOREGROUND_INTENSITY);
+
+			else if(VAR_Estado_Carrera.Nota >= 4 && VAR_Estado_Carrera.Nota <=6)
+				setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+			else
+				setColor(FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+			printf("%-4s", VAR_Estado_Carrera.Nota == 0 ? " " : (sprintf(Buffer_Nota, "%d", VAR_Estado_Carrera.Nota), Buffer_Nota));
+			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+			printf("|\n");
+
+		}
 
 		Error_Lectura_Escritura(fread(&VAR_Estado_Carrera, sizeof(STR_Estado_Carrera), 1, Archivo_Estado_Carrera), "Mostrar_Estado_Carrera");
 

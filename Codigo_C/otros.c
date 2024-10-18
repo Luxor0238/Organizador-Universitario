@@ -27,7 +27,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 	int Registros = 0;
 
 	system("cls");
-	printf("Organizador Multicarrera v0.8.2\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha_F.tm_mday, STR_Fecha_F.tm_mon + 1, STR_Fecha_F.tm_year + 1900, STR_Fecha_F.tm_hour, STR_Fecha_F.tm_min);
+	printf("Organizador Multicarrera v0.8.3\n\n%02d/%02d/%04d %02d:%02d\n\n", STR_Fecha_F.tm_mday, STR_Fecha_F.tm_mon + 1, STR_Fecha_F.tm_year + 1900, STR_Fecha_F.tm_hour, STR_Fecha_F.tm_min);
 
 	if(!Plan_De_Estudios_Cargado)
 	{
@@ -41,7 +41,7 @@ void Mostrar_Menu_Gestion(int Plan_De_Estudios_Cargado, FILE *Archivo_Trabajos_P
 	if(Plan_De_Estudios_Cargado)
 	{
 
-		printf("--------------------------Notificaciones--------------------------\n\n");
+		printf("----------------------Notificaciones(0)--------------------------\n\n");
 
 		Error_Lectura_Escritura(fread(&VAR_Trabajos, sizeof(STR_Trabajos), 1, Archivo_Trabajos_Practicos), "Mostrar_Menu_Gestion");
 		while(!feof(Archivo_Trabajos_Practicos))
