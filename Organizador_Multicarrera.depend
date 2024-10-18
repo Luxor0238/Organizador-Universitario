@@ -107,7 +107,7 @@
 
 1729121199 e:\facultad\organizador_multicarrera\codigo_h\materias.h
 
-1729207260 source:e:\facultad\organizador_multicarrera\codigo_c\materias.c
+1729270770 source:e:\facultad\organizador_multicarrera\codigo_c\materias.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -119,7 +119,7 @@
 
 1721107736 e:\facultad\organizador_multicarrera\codigo_h\parciales.h
 
-1729129846 source:e:\facultad\organizador_multicarrera\codigo_c\otros.c
+1729271376 source:e:\facultad\organizador_multicarrera\codigo_c\otros.c
 	<stdio.h>
 	<windows.h>
 	<ctype.h>
@@ -149,9 +149,10 @@
 	"../Codigo_H/otros.h"
 	"../Codigo_H/materias.h"
 
-1729121246 source:e:\facultad\organizador_multicarrera\main.c
+1729269701 source:e:\facultad\organizador_multicarrera\main.c
 	<stdio.h>
 	<windows.h>
+	<conio.h>
 	"Codigo_H/archivos.h"
 	"Codigo_H/materias.h"
 	"Codigo_H/otros.h"

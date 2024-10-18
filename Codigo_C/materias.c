@@ -273,26 +273,27 @@ void Mostrar_Estado_Carrera(FILE *Archivo_Estado_Carrera)
 	while(!feof(Archivo_Estado_Carrera))
 	{
 
+		if(strcmp(VAR_Estado_Carrera.Condicion, "Promocionada") == 0)
+			Materias_Promocionadas ++;
+
+		else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursada") == 0)
+			Materias_Cursadas ++;
+
+		else if(strcmp(VAR_Estado_Carrera.Condicion, "No Aprobada") == 0)
+			Materias_Reprobadas ++;
+
+		else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursando") == 0)
+			Materias_En_Curso ++;
+
+		else if(strcmp(VAR_Estado_Carrera.Condicion, "Por Cursar") == 0)
+			Materias_Por_Cursar ++;
+
+		else if(strcmp(VAR_Estado_Carrera.Condicion, "Aprobada") == 0)
+			Materias_Aprobadas ++;
+		
 		if(strcmp(VAR_Estado_Carrera.Disponibilidad, "Disponible") == 0)
 		{
 
-			if(strcmp(VAR_Estado_Carrera.Condicion, "Promocionada") == 0)
-				Materias_Promocionadas ++;
-
-			else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursada") == 0)
-				Materias_Cursadas ++;
-
-			else if(strcmp(VAR_Estado_Carrera.Condicion, "No Aprobada") == 0)
-				Materias_Reprobadas ++;
-
-			else if(strcmp(VAR_Estado_Carrera.Condicion, "Cursando") == 0)
-				Materias_En_Curso ++;
-
-			else if(strcmp(VAR_Estado_Carrera.Condicion, "Por Cursar") == 0)
-				Materias_Por_Cursar ++;
-
-			else if(strcmp(VAR_Estado_Carrera.Condicion, "Aprobada") == 0)
-				Materias_Aprobadas ++;
 
 			printf("----------------------------------------------------------------------------------------------------------------------------------\n");
 			setColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);

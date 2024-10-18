@@ -3,6 +3,7 @@
 //Librerias####################################################################################################################################
 #include <stdio.h>	//Manejo de Entrada y Salida
 #include <windows.h> //Para el manejo de la ventana de consola
+#include <conio.h> // Para el manejo de entrada de teclado
 //#############################################################################################################################################
 #include "Codigo_H/archivos.h"
 #include "Codigo_H/materias.h"
@@ -48,6 +49,8 @@ int main(void)
 
 	int Comfirmacion;
 	int Es_Grupal;
+
+	char Opcion_Getch;
 
 	Maximizar_Ventana();
 
